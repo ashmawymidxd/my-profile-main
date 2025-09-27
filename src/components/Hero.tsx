@@ -248,63 +248,6 @@ const Hero = () => {
           <div className="w-1 h-4 bg-accent rounded-full mt-3 animate-pulse shadow-lg shadow-accent/50"></div>
         </div>
       </div>
-
-      {/* Add these styles to your CSS */}
-      <style jsx>{`
-        .glass-card-enhanced {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .animate-float-slow {
-          animation: float 6s ease-in-out infinite;
-        }
-
-        .animate-gradient {
-          animation: gradient 3s ease infinite;
-        }
-
-        .bg-glow-xl {
-          filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
-        }
-
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px) rotate(0deg);
-          }
-          50% {
-            transform: translateY(-20px) rotate(180deg);
-          }
-        }
-
-        @keyframes gradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-
-        .animate-gradient-x {
-          animation: gradient-x 15s ease infinite;
-        }
-
-        @keyframes gradient-x {
-          0%,
-          100% {
-            transform: translateX(0%);
-          }
-          50% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
     </section>
   );
 };
