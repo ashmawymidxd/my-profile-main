@@ -13,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/contexts/I18nContext";
 import heroBackground from "@/assets/hero-background.jpg";
+import cvFile from "@/assets/cv/Ahmed_Hassan_CV.pdf";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,7 +43,7 @@ const Hero = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/public/Ahmed_Hassan_CV.pdf";
+    link.href = cvFile;
     link.download = "Ahmed_Hassan_CV.pdf";
     document.body.appendChild(link);
     link.click();
