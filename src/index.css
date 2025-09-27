@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ahmed Hassan Portfolio Design System - Glass Morphism Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Portfolio Color Palette */
+    --background: 220 25% 95%;
+    --foreground: 220 15% 15%;
+
+    /* Glass Morphism Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+    --glass: 220 25% 98%;
+    --glass-border: 220 15% 85%;
+
+    /* Brand Colors - Deep Blue Theme */
+    --primary: 221 83% 27%;  /* Deep Blue #1E3A8A */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 221 60% 45%;
+    --primary-light: 221 70% 85%;
+
+    /* Secondary & Accent */
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 220 15% 15%;
+    --accent: 212 100% 80%;  /* Light Blue Accent */
+    --accent-foreground: 220 15% 15%;
+
+    /* UI States */
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 10% 45%;
+    --border: 220 15% 85%;
+    --input: 220 15% 90%;
+    --ring: 221 83% 27%;
+
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.25);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+    --gradient-accent: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--primary-light)));
+    
+    /* Shadows & Glows */
+    --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.37);
+    --shadow-hover: 0 12px 40px rgba(31, 38, 135, 0.5);
+    --glow-primary: 0 0 30px hsl(var(--primary) / 0.3);
+    
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark Mode Portfolio Colors */
+    --background: 220 15% 8%;
+    --foreground: 220 15% 95%;
+
+    /* Dark Glass Morphism */
+    --card: 220 15% 12%;
+    --card-foreground: 220 15% 95%;
+    --glass: 220 15% 15%;
+    --glass-border: 220 15% 25%;
+
+    /* Dark Brand Colors */
+    --primary: 221 70% 60%;  /* Lighter blue for dark mode */
+    --primary-foreground: 220 15% 8%;
+    --primary-glow: 221 60% 70%;
+    --primary-light: 221 50% 25%;
+
+    /* Dark Secondary & Accent */
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 220 15% 95%;
+    --accent: 212 80% 60%;
+    --accent-foreground: 220 15% 8%;
+
+    /* Dark UI States */
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 65%;
+    --border: 220 15% 25%;
+    --input: 220 15% 20%;
+    --ring: 221 70% 60%;
+
+    /* Dark Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    
+    /* Dark Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+    --gradient-accent: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--primary-light)));
+    
+    /* Dark Shadows & Glows */
+    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.7);
+    --glow-primary: 0 0 30px hsl(var(--primary) / 0.4);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    overflow-x: hidden;
+  }
+  
+  .font-arabic {
+    font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glass Morphism Components */
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-glass);
+    @apply rounded-2xl;
+  }
+
+  .glass-card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-4px);
+    @apply transition-all duration-300;
+  }
+
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .text-glow {
+    text-shadow: var(--glow-primary);
+  }
+
+  /* Smooth Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
