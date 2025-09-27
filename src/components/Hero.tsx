@@ -42,7 +42,7 @@ const Hero = () => {
 
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "../assets/cv/Ahmed_Hassan_CV.pdf";
+    link.href = "/public/Ahmed_Hassan_CV.pdf";
     link.download = "Ahmed_Hassan_CV.pdf";
     document.body.appendChild(link);
     link.click();

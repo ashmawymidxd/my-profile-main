@@ -20,7 +20,7 @@ export const enTranslations = {
     linkedin: "LinkedIn",
     contactSlug:"Hello! I came across your portfolio and would like to connect with you.",
     download:"Download CV",
-    whatsapp:" WhatsApp Me"
+    whatsapp:" WhatsApp Me",
   },
 
   // About Section
