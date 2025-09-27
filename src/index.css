@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 /* Ahmed Hassan Portfolio Design System - Glass Morphism Theme */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap");
 
 @layer base {
   :root {
@@ -19,7 +19,7 @@
     --glass-border: 220 15% 85%;
 
     /* Brand Colors - Deep Blue Theme */
-    --primary: 221 83% 27%;  /* Deep Blue #1E3A8A */
+    --primary: 221 83% 27%; /* Deep Blue #1E3A8A */
     --primary-foreground: 0 0% 100%;
     --primary-glow: 221 60% 45%;
     --primary-light: 221 70% 85%;
@@ -27,7 +27,7 @@
     /* Secondary & Accent */
     --secondary: 0 0% 100%;
     --secondary-foreground: 220 15% 15%;
-    --accent: 212 100% 80%;  /* Light Blue Accent */
+    --accent: 212 100% 80%; /* Light Blue Accent */
     --accent-foreground: 220 15% 15%;
 
     /* UI States */
@@ -40,17 +40,29 @@
     /* Glass Effects */
     --glass-bg: rgba(255, 255, 255, 0.25);
     --glass-border: rgba(255, 255, 255, 0.18);
-    
+
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
-    --gradient-accent: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--primary-light)));
-    
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--primary-glow))
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.1)
+    );
+    --gradient-accent: linear-gradient(
+      45deg,
+      hsl(var(--accent)),
+      hsl(var(--primary-light))
+    );
+
     /* Shadows & Glows */
     --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.37);
     --shadow-hover: 0 12px 40px rgba(31, 38, 135, 0.5);
     --glow-primary: 0 0 30px hsl(var(--primary) / 0.3);
-    
+
     --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
@@ -82,7 +94,7 @@
     --glass-border: 220 15% 25%;
 
     /* Dark Brand Colors */
-    --primary: 221 70% 60%;  /* Lighter blue for dark mode */
+    --primary: 221 70% 60%; /* Lighter blue for dark mode */
     --primary-foreground: 220 15% 8%;
     --primary-glow: 221 60% 70%;
     --primary-light: 221 50% 25%;
@@ -103,12 +115,24 @@
     /* Dark Glass Effects */
     --glass-bg: rgba(255, 255, 255, 0.05);
     --glass-border: rgba(255, 255, 255, 0.1);
-    
+
     /* Dark Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-    --gradient-accent: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--primary-light)));
-    
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(var(--primary)),
+      hsl(var(--primary-glow))
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+    --gradient-accent: linear-gradient(
+      45deg,
+      hsl(var(--accent)),
+      hsl(var(--primary-light))
+    );
+
     /* Dark Shadows & Glows */
     --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.5);
     --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.7);
@@ -137,10 +161,11 @@
   body {
     @apply bg-background text-foreground font-sans;
     overflow-x: hidden;
+    font-family: "Cairo", sans-serif;
   }
-  
+
   .font-arabic {
-    font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+    font-family: "Cairo", sans-serif;
   }
 }
 
@@ -189,8 +214,13 @@
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 @keyframes fadeUp {
