@@ -33,7 +33,8 @@ export const arTranslations = {
     expertiseDesc: "بارع في كل من التطوير الأمامي والخلفي، أتميز في صياغة واجهات مستخدم أنيقة ومنطق خادم قوي.",
     yearsExperience: "سنوات الخبرة",
     projectsBuilt: "المشاريع المنجزة",
-    clientSatisfaction: "رضا العملاء"
+    clientSatisfaction: "رضا العملاء",
+    download:"تنزيل السيرة الذاتية"
   },
 
   // Experience Section

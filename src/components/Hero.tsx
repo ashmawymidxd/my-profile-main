@@ -138,7 +138,7 @@ const Hero = () => {
               onClick={handleDownloadCV}
             >
               <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              Download CV
+              {translations.hero.download}
             </Button>
 
             {/* WhatsApp Button */}

@@ -18,7 +18,8 @@ export const enTranslations = {
     contactMe: "Contact Me",
     viewProjects: "View Projects",
     linkedin: "LinkedIn",
-    contactSlug:"Hello! I came across your portfolio and would like to connect with you."
+    contactSlug:"Hello! I came across your portfolio and would like to connect with you.",
+    download:"Download CV"
   },
 
   // About Section
