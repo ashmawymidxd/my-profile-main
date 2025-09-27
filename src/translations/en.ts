@@ -97,7 +97,8 @@ export const enTranslations = {
       segam: "UI-rich healthcare website using React, Tailwind CSS, and modern design patterns for dental services.",
       segamDashboard: "Full Stack dashboard application built with Node.js and React for comprehensive data management.",
       alnејum: "Business website for construction company with project portfolio and service management.",
-      schengen: "Flask-based application for visa application processing with document management and tracking."
+      schengen: "Flask-based application for visa application processing with document management and tracking.",
+      weCare: "Interactive web app for booking coworking spaces and private offices of various types using React and Tailwind CSS, featuring multi-language support."
     }
   },
 

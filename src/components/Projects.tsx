@@ -59,6 +59,15 @@ const Projects = () => {
       tech: ["React", "Tailwind CSS", "i18Next", "TypeScript"],
       color: "primary-glow",
       icon: <Code className="w-5 h-5" />
+    },
+    {
+      title: "We Care",
+      description: translations.projects.projectDescriptions.weCare,
+      url: "http://we-care-khaki.vercel.app/",
+      category: "Web App", 
+      tech: ["React", "Tailwind CSS", "i18Next", "TypeScript"],
+      color: "primary-glow",
+      icon: <Code className="w-5 h-5" />
     }
   ];
 
