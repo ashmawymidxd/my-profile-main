@@ -32,7 +32,7 @@ const Hero = () => {
   }, []);
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "01554300351";
+    const phoneNumber = "+201554300351";
     const message = translations.hero.contactSlug;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message
