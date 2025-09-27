@@ -34,7 +34,8 @@ export const arTranslations = {
     yearsExperience: "سنوات الخبرة",
     projectsBuilt: "المشاريع المنجزة",
     clientSatisfaction: "رضا العملاء",
-    download:"تنزيل السيرة الذاتية"
+    download:"تنزيل السيرة الذاتية",
+    whatsapp:"وتساب"
   },
 
   // Experience Section
