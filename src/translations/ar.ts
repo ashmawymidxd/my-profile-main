@@ -20,7 +20,7 @@ export const arTranslations = {
     viewProjects: "عرض المشاريع",
     linkedin: "لينكد إن",
     contactSlug: "مرحباً! لقد شاهدت أعمالك وأرغب في التواصل معك",
-    download: "تنزيل السيرة الذاتية",
+    download: "تنزيل CV",
     whatsapp: "وتساب",
   },
 
