@@ -17,7 +17,8 @@ export const enTranslations = {
     description: "I am a passionate Full Stack Developer specializing in modern web technologies and scalable solutions. My focus is on building clean, efficient, and user-friendly applications while keeping up with the latest trends in software development.",
     contactMe: "Contact Me",
     viewProjects: "View Projects",
-    linkedin: "LinkedIn"
+    linkedin: "LinkedIn",
+    contactSlug:"Hello! I came across your portfolio and would like to connect with you."
   },
 
   // About Section
