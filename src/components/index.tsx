@@ -1,12 +1,10 @@
-import { Mail, Phone, MapPin, Send, Linkedin, Github, MessageCircle } from 'lucide-react';
+here i want to use emailjs to send email using templet and service and so on import { Mail, Phone, MapPin, Send, Linkedin, Github, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
 import { useI18n } from '@/contexts/I18nContext';
-import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const { translations } = useI18n();
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,33 +12,11 @@ const Contact = () => {
     message: ''
   });
 
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState<string | null>(null);
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .send(
-        "service_f48s5ad", // 🔹 replace with your EmailJS service ID
-        "template_3yff8vb", // 🔹 replace with your EmailJS template ID
-        {
-          name: formData.name,
-          email: formData.email,
-          title: formData.subject,
-          message: formData.message,
-        },
-        "vK1Pii72N3tTdskj7" // 🔹 replace with your EmailJS public key
-      )
-      .then(() => {
-        setStatus("success");
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      })
-      .catch(() => {
-        setStatus("error");
-      })
-      .finally(() => setLoading(false));
+    // Handle form submission
+    const mailtoLink = `mailto:ahmedhassanshehata551@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    window.location.href = mailtoLink;
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -82,7 +58,7 @@ const Contact = () => {
       color: "primary"
     },
     {
-      name: "GitHub",
+      name: "GitHub", 
       icon: <Github className="w-5 h-5" />,
       url: "https://github.com/ashmawymidxd",
       color: "accent"
@@ -113,9 +89,8 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="glass-card p-8">
             <h3 className="text-2xl font-bold text-foreground mb-6">{translations.contact.formTitle}</h3>
-
+            
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name + Email */}
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -129,8 +104,10 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-background/50 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                    placeholder={translations.contact.form.namePlaceholder}
                   />
                 </div>
+                
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
                     {translations.contact.form.emailAddress}
@@ -143,11 +120,11 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 bg-background/50 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                    placeholder={translations.contact.form.emailPlaceholder}
                   />
                 </div>
               </div>
-
-              {/* Subject */}
+              
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
                   {translations.contact.form.subject}
@@ -160,10 +137,10 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-background/50 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
+                  placeholder={translations.contact.form.subjectPlaceholder}
                 />
               </div>
-
-              {/* Message */}
+              
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                   {translations.contact.form.message}
@@ -176,27 +153,18 @@ const Contact = () => {
                   required
                   rows={5}
                   className="w-full px-4 py-3 bg-background/50 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300 resize-none"
+                  placeholder={translations.contact.form.messagePlaceholder}
                 ></textarea>
               </div>
-
-              {/* Submit Button */}
-              <Button
+              
+              <Button 
                 type="submit"
                 size="lg"
-                disabled={loading}
                 className="w-full bg-primary hover:bg-primary-glow text-primary-foreground transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
               >
                 <Send className="w-5 h-5 mr-2" />
-                {loading ? translations.contact.form.sending : translations.contact.form.sendMessage}
+                {translations.contact.form.sendMessage}
               </Button>
-
-              {/* Status messages */}
-              {status === "success" && (
-                <p className="text-green-600 mt-2">✅ Message sent successfully!</p>
-              )}
-              {status === "error" && (
-                <p className="text-red-600 mt-2">❌ Something went wrong. Please try again.</p>
-              )}
             </form>
           </div>
 
@@ -205,6 +173,7 @@ const Contact = () => {
             {/* Contact Methods */}
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-foreground mb-6">{translations.contact.getInTouchTitle}</h3>
+              
               {contactMethods.map((method, index) => (
                 <div key={index} className="glass-card p-6 hover:shadow-lg transition-all duration-300 group">
                   <div className="flex items-center gap-4">
@@ -213,7 +182,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground mb-1">{method.title}</h4>
-                      <a
+                      <a 
                         href={method.link}
                         className="text-muted-foreground hover:text-primary transition-colors duration-300"
                       >
