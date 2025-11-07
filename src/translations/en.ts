@@ -97,6 +97,8 @@ export const enTranslations = {
     projectDescriptions: {
       sfcl: "60+ projects built using PHP & MySQL with robust backend architecture and user management systems.",
       adminSfcl: "15 large-scale Laravel monolithic & microservices applications with advanced admin dashboards.",
+      gommla:  "E-commerce platform for wholesale product trading, merchant management, their sales, and customer orders",
+      mustaqdem: "Labor recruitment platform in the Kingdom of Saudi Arabia for managing requests, clients, and invoices",
       segam: "UI-rich healthcare website using React, Tailwind CSS, and modern design patterns for dental services.",
       segamDashboard: "Full Stack dashboard application built with Node.js and React for comprehensive data management.",
       alnејum: "Business website for construction company with project portfolio and service management.",

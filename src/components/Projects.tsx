@@ -71,7 +71,7 @@ const Projects = () => {
     },
     {
       title: "Gommla",
-      description: translations.projects.projectDescriptions.weCare,
+      description: translations.projects.projectDescriptions.gommla,
       url: "http://gommla.net",
       category: "Full stack", 
       tech: ["Laravel", "Tailwind CSS", "i18Next", "TypeScript"],
@@ -80,7 +80,7 @@ const Projects = () => {
     },
     {
       title: "Mustaqdem",
-      description: translations.projects.projectDescriptions.weCare,
+      description: translations.projects.projectDescriptions.mustaqdem,
       url: "https://mustaqdem.com/",
       category: "Full stack", 
       tech: ["Laravel", "Tailwind CSS", "Vite", "TypeScript"],
