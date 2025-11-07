@@ -54,7 +54,7 @@ const Projects = () => {
     {
       title: "Schengen Visa App",
       description: translations.projects.projectDescriptions.schengen,
-      url: "https://schengen-visa.vercel.app/",
+      url: "https://first-mahata.vercel.app/",
       category: "Web App", 
       tech: ["React", "Tailwind CSS", "i18Next", "TypeScript"],
       color: "primary-glow",
@@ -68,7 +68,26 @@ const Projects = () => {
       tech: ["React", "Tailwind CSS", "i18Next", "TypeScript"],
       color: "primary-glow",
       icon: <Code className="w-5 h-5" />
-    }
+    },
+    {
+      title: "Gommla",
+      description: translations.projects.projectDescriptions.weCare,
+      url: "http://gommla.net",
+      category: "Full stack", 
+      tech: ["Laravel", "Tailwind CSS", "i18Next", "TypeScript"],
+      color: "primary-glow",
+      icon: <Code className="w-5 h-5" />
+    },
+    {
+      title: "Mustaqdem",
+      description: translations.projects.projectDescriptions.weCare,
+      url: "https://mustaqdem.com/",
+      category: "Full stack", 
+      tech: ["Laravel", "Tailwind CSS", "Vite", "TypeScript"],
+      color: "primary-glow",
+      icon: <Code className="w-5 h-5" />
+    },
+   
   ];
 
   const categories = ["All", "Platform", "Backend", "Frontend", "Full Stack", "Business", "Web App"];
