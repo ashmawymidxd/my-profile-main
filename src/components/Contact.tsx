@@ -109,7 +109,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
           <div className="glass-card p-8">
             <h3 className="text-2xl font-bold text-foreground mb-6">{translations.contact.formTitle}</h3>

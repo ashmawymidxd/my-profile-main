@@ -51,7 +51,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[115vh] flex items-center justify-center overflow-hidden">
       {/* Enhanced Background with Parallax Effect */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed scale-110"
@@ -119,10 +119,9 @@ const Hero = () => {
           }`}
         >
           {/* Enhanced Location & Contact Info */}
-          <div className="mb-6 md:mb-8 glass-card-enhanced inline-block px-4 md:px-6 py-2 md:py-3 border border-white/20 backdrop-blur-xl">
+          <div className="rounded-full mb-6 md:mb-8 glass-card-enhanced inline-block px-4 md:px-6 py-2 md:py-3 border border-white/20 backdrop-blur-xl">
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-xs sm:text-sm text-foreground/90">
               <span className="flex items-center gap-1">
-                <span className="text-accent">📍</span>
                 {translations.hero.location}
               </span>
               <span className="flex items-center gap-1">
@@ -153,7 +152,7 @@ const Hero = () => {
           </div>
 
           {/* Enhanced Description */}
-          <p className="text-lg md:text-xl lg:text-2xl text-white/85 max-w-4xl mx-auto mb-8 md:mb-10 leading-relaxed px-4 font-light tracking-wide">
+          <p className="text-md md:text-lg lg:text-xl text-white/85 max-w-4xl mx-auto mb-8 md:mb-10 leading-relaxed px-4 font-light tracking-wide">
             {translations.hero.description}
           </p>
 

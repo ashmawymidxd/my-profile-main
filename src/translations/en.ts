@@ -13,9 +13,9 @@ export const enTranslations = {
     location: "Bani Swayf, Egypt",
     name: "Ahmed Hassan",
     lastName: "Shehata",
-    title: "Full Stack Developer",
+    title: "Software Enginnering",
     description:
-      "I am a passionate Full Stack Developer specializing in modern web technologies and scalable solutions. My focus is on building clean, efficient, and user-friendly applications while keeping up with the latest trends in software development.",
+      "Software Engineering isn't just my profession—it's my craft. I'm passionate about architecting scalable solutions and bringing ideas to life through clean, efficient code. From conceptualizing features to deploying production-ready applications, I thrive on the entire development lifecycle. My toolkit includes modern web technologies, but my superpower is translating complex requirements into intuitive digital experiences that make a difference.",
     contactMe: "Contact Me",
     viewProjects: "View Projects",
     linkedin: "LinkedIn",
@@ -56,7 +56,7 @@ export const enTranslations = {
     learnMore: "Learn more",
     jobs: {
       fullStack: {
-        title: "Full Stack Developer – Microservice Applications",
+        title: "Software Enginnering – Microservice Applications",
         period: "January 2023 – December 2024",
         description:
           "Built robust microservices using Laravel, Slim, and Lumen, designing scalable architectures for complex systems.",
@@ -123,24 +123,43 @@ export const enTranslations = {
       "Check out my GitHub profile for more projects, code samples, and contributions to open source.",
     viewGithub: "View GitHub Profile",
     projectDescriptions: {
-      sfcl: "60+ projects built using PHP & MySQL with robust backend architecture and user management systems.",
+      // SFCL - Corporate Website
+      sfcl: "SFCL General Contracting Company website - An integrated corporate platform showcasing the company's services in facilities, maintenance, and construction, with a modern design that reflects its professional identity and facilitates client exploration of past projects and team communication.",
+
+      // SFCL Admin Dashboard
       adminSfcl:
-        "15 large-scale Laravel monolithic & microservices applications with advanced admin dashboards.",
-      gommla:
-        "E-commerce platform for wholesale product trading, merchant management, their sales, and customer orders",
-      mustaqdem:
-        "Labor recruitment platform in the Kingdom of Saudi Arabia for managing requests, clients, and invoices",
+        "Advanced Content Management System for SFCL website - Provides a comprehensive dashboard enabling full control over all website elements, managing published projects, updating dynamic content, and securely adding images and videos with ease.",
+
+      // Segam Dental Clinic
       segam:
-        "UI-rich healthcare website using React, Tailwind CSS, and modern design patterns for dental services.",
+        "Integrated platform for Cosmetic Dentistry Clinics - An attractive user interface built with React and Tailwind CSS professionally presenting dental services, featuring service showcases, clinical cases, and online appointment booking forms.",
+
+      // Segam Dashboard
       segamDashboard:
-        "Full Stack dashboard application built with Node.js and React for comprehensive data management.",
-      alnејum:
-        "Business website for construction company with project portfolio and service management.",
+        "Integrated Management System for Dental Clinics - An advanced web application based on Node.js and React for comprehensive data management of patients, appointments, medical records, daily reports, and invoices with high accuracy and efficiency.",
+
+      // Alnejum Contracting
+      alnejum:
+        "Alnejum Contracting Company E-Portal - A professional business website showcasing completed project portfolio, construction services offered, with project management system and direct communication with potential clients.",
+
+      // Gommla E-commerce
+      gommla:
+        "Integrated Wholesale E-commerce Platform - An advanced system for managing products, merchants, sales, and customer orders, with an easy-to-use interface enabling merchants to track their inventory and orders in real-time.",
+
+      // Mustaqdem Recruitment
+      mustaqdem:
+        "Leading E-Recruitment Platform in Saudi Arabia - Integrated system for managing domestic worker recruitment requests, tracking request status, invoicing, and professional customer relationship management with smooth workflow.",
+
+      // Schengen Visa App
       schengen:
-        "Flask-based application for visa application processing with document management and tracking.",
+        "Schengen Visa Application Management System - A Flask-based application for processing visa applications, managing required documents, tracking application status, and securely archiving data in an organized manner.",
+
+      // WeCare Office Spaces
       weCare:
-        "Interactive web app for booking coworking spaces and private offices of various types using React and Tailwind CSS, featuring multi-language support.",
-      barq: "Enterprise Resources Management SaaS web platform , Human Resources (HR) Core 👥 , Time & Attendance ⏰ , Leave & Holiday Management 🏖️ , Assets Management 💻, Payroll & Finance 💰, System Configuration ⚙️",
+        "Office Space Booking Platform - A multilingual interactive application enabling booking of private offices and meeting rooms, with electronic payment system, interactive display of available spaces, and smart booking management using React and Tailwind CSS.",
+
+      // Barq ERP System
+      barq: "Integrated Enterprise Resource Planning (ERP) System - A comprehensive SaaS platform including HR management, attendance system, leave management, asset tracking, payroll processing, financial affairs, and flexible system settings tailored to various organizational needs.",
     },
   },
 
@@ -177,7 +196,7 @@ export const enTranslations = {
   // Footer
   footer: {
     name: "Ahmed Hassan Shehata",
-    title: "Full Stack Developer • Bani Swayf, Egypt",
+    title: "Software Enginnering • Bani Swayf, Egypt",
     email: "Email",
     linkedin: "LinkedIn",
     github: "GitHub",
