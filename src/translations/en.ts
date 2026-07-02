@@ -160,6 +160,9 @@ export const enTranslations = {
 
       // Barq ERP System
       barq: "Integrated Enterprise Resource Planning (ERP) System - A comprehensive SaaS platform including HR management, attendance system, leave management, asset tracking, payroll processing, financial affairs, and flexible system settings tailored to various organizational needs.",
+      // talabate
+      talabate:
+        "Talabate E-commerce Platform - A comprehensive online ordering system for restaurants, enabling customers to browse menus, place orders, and make payments seamlessly, while providing restaurant owners with tools to manage orders, track sales, and enhance customer engagement.",
     },
   },
 

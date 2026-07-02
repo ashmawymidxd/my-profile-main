@@ -173,6 +173,18 @@ const Projects = () => {
   // Memoized projects data to prevent recreation on every render
   const projects = useMemo<Project[]>(
     () => [
+      // talabate
+      {
+        title: "Talabate",
+        description:
+          translations.projects?.projectDescriptions?.talabate || "",
+        url: "https://talabat.metricsdigital.me/en",
+        category: "Platform",
+        tech: ["Laravel", "Tailwind CSS", "Laravel Localized", "Livewire"],
+        color: "primary-glow",
+        icon: ProjectIcons.platform,
+
+      },
       {
         title: "BARQ ERP",
         description: translations.projects?.projectDescriptions?.barq || "",
