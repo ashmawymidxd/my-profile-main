@@ -76,6 +76,13 @@ export const enTranslations = {
           "Created social media posts, 3D designs, UI/UX layouts, and marketing materials using Adobe tools.",
         type: "Freelance",
       },
+      reserveOfficer: {
+        title: "Reserve Officer, Egyptian Armed Forces",
+        period: "2024 – 2026",
+        type: "Military Service",
+        description:
+          "Served as a Reserve Officer, gaining hands-on experience in networking, technical support, and issue resolution in mission-critical, disciplined environments.",
+      },
     },
   },
 

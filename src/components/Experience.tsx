@@ -4,7 +4,14 @@ import { useI18n } from '@/contexts/I18nContext';
 const Experience = () => {
   const { translations } = useI18n();
   
-  const experiences = [
+    const experiences = [
+    {
+      title: translations.experience.jobs.reserveOfficer.title,
+      period: translations.experience.jobs.reserveOfficer.period,
+      description: translations.experience.jobs.reserveOfficer.description,
+      type: translations.experience.jobs.reserveOfficer.type,
+      color: "accent"
+    },
     {
       title: translations.experience.jobs.fullStack.title,
       period: translations.experience.jobs.fullStack.period,

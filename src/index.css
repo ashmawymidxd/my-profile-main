@@ -66,8 +66,8 @@ body {
     );
 
     /* Shadows & Glows */
-    --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.37);
-    --shadow-hover: 0 12px 40px rgba(31, 38, 135, 0.5);
+    --shadow-glass: 0 2px 4px rgba(31, 38, 135, 0.37);
+    --shadow-hover: 0 3px 5px rgba(31, 38, 135, 0.5);
     --glow-primary: 0 0 30px hsl(var(--primary) / 0.3);
 
     --radius: 1rem;
@@ -141,8 +141,8 @@ body {
     );
 
     /* Dark Shadows & Glows */
-    --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.5);
-    --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.7);
+    --shadow-glass: 0 2px 4px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 3px 5px rgba(0, 0, 0, 0.7);
     --glow-primary: 0 0 30px hsl(var(--primary) / 0.4);
 
     --sidebar-background: 240 5.9% 10%;

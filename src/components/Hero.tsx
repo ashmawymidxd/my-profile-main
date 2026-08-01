@@ -6,30 +6,23 @@ import {
   MessageCircle,
   Phone,
   Download,
-  Star,
-  Zap,
+  MapPin,
+  Code2,
+  Briefcase,
+  Award,
   Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/contexts/I18nContext";
-import heroBackground from "@/assets/hero-background.jpg";
-import cvFile from "@/assets/cv/Ahmed_Hassan_CV.pdf";
+import cvFile from "@/assets/cv/Ahmed_Hassan_Full_Stack_CV.pdf";
+import profileImage from "@/assets/profile/profile.jpg";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [isSparkling, setIsSparkling] = useState(false);
   const { translations } = useI18n();
 
   useEffect(() => {
     setIsVisible(true);
-
-    // Add sparkling effect every 3 seconds
-    const sparkleInterval = setInterval(() => {
-      setIsSparkling(true);
-      setTimeout(() => setIsSparkling(false), 1000);
-    }, 3000);
-
-    return () => clearInterval(sparkleInterval);
   }, []);
 
   const handleWhatsAppClick = () => {
@@ -50,204 +43,244 @@ const Hero = () => {
     document.body.removeChild(link);
   };
 
+  const socialLinks = [
+    {
+      icon: Github,
+      label: "GitHub",
+      href: "https://github.com/ashmawymidxd",
+    },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      href: "https://linkedin.com/in/ahmed-hassan-shehata",
+    },
+    {
+      icon: MessageCircle,
+      label: "Telegram",
+      href: "https://t.me/G1_ahmed_hassan",
+    },
+  ];
+
+  const stats = [
+    { label: "Projects", value: "50+" },
+    { label: "Experience", value: "5+ Years" },
+    { label: "Clients", value: "30+" },
+  ];
+
   return (
-    <section className="relative min-h-[115vh] flex items-center justify-center overflow-hidden">
-      {/* Enhanced Background with Parallax Effect */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed scale-110"
-        style={{
-          backgroundImage: `url(${heroBackground})`,
-          transform: "translateZ(0)",
-        }}
-      >
-        <div className="absolute inset-0 hero-gradient opacity-95"></div>
-
-        {/* Animated Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 via-purple-900/15 to-pink-900/20 animate-gradient-x"></div>
-      </div>
-
-      {/* Enhanced Floating Elements with More Magic */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Animated Shapes */}
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary-light/25 rounded-full blur-xl animate-float-slow"></div>
-        <div
-          className="absolute top-3/4 right-1/4 w-24 h-24 bg-accent/40 rounded-full blur-lg animate-float"
-          style={{ animationDelay: "-2s" }}
-        ></div>
-        <div
-          className="absolute top-1/2 left-3/4 w-40 h-40 bg-primary-glow/20 rounded-full blur-2xl animate-float-slow"
-          style={{ animationDelay: "-4s" }}
-        ></div>
-
-        {/* New Floating Elements */}
-        <div
-          className="absolute top-1/3 right-1/3 w-16 h-16 bg-white/10 rounded-full blur-md animate-float"
-          style={{ animationDelay: "-1s" }}
-        ></div>
-        <div
-          className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-accent/25 rounded-full blur-lg animate-float-slow"
-          style={{ animationDelay: "-3s" }}
-        ></div>
-
-        {/* Sparkling Stars */}
-        {isSparkling && (
-          <>
-            <div className="absolute top-1/4 right-1/4 animate-ping">
-              <Star className="w-4 h-4 text-yellow-400/60" />
-            </div>
-            <div
-              className="absolute bottom-1/3 left-1/5 animate-ping"
-              style={{ animationDelay: "0.3s" }}
-            >
-              <Sparkles className="w-3 h-3 text-cyan-400/60" />
-            </div>
-            <div
-              className="absolute top-2/3 right-1/5 animate-ping"
-              style={{ animationDelay: "0.6s" }}
-            >
-              <Zap className="w-3 h-3 text-orange-400/60" />
-            </div>
-          </>
-        )}
-      </div>
-
-      {/* Main Content */}
-      <div className="relative z-40 max-w-6xl mx-auto px-4 md:px-6 text-center">
-        <div
-          className={`transition-all duration-1000 ${
-            isVisible ? "animate-fade-up" : "opacity-0"
-          }`}
-        >
-          {/* Enhanced Location & Contact Info */}
-          <div className="rounded-full mb-6 md:mb-8 glass-card-enhanced inline-block px-4 md:px-6 py-2 md:py-3 border border-white/20 backdrop-blur-xl">
-            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-xs sm:text-sm text-foreground/90">
-              <span className="flex items-center gap-1">
-                {translations.hero.location}
-              </span>
-              <span className="flex items-center gap-1">
-                <Phone size={12} className="sm:hidden" />
-                <Phone size={14} className="hidden sm:block" />
-                <span className="text-xs sm:text-sm">
-                  01554300351 / 01208778686
-                </span>
-              </span>
-            </div>
-          </div>
-
-          {/* Enhanced Main Heading with Gradient Text */}
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-4 md:mb-6">
-            <span className="bg-gradient-to-r from-white via-accent to-white bg-clip-text text-transparent bg-300% animate-gradient bg-glow-xl">
-              {translations.hero.name}
-            </span>
-            <span className="bg-gradient-to-r from-accent via-white to-accent bg-clip-text text-transparent bg-300% animate-gradient block md:inline md:ml-4 bg-glow-xl">
-              {translations.hero.lastName}
-            </span>
-          </h1>
-
-          {/* Enhanced Subtitle */}
-          <div className="text-xl sm:text-3xl md:text-4xl text-white/95 mb-6 md:mb-8 font-light px-4">
-            <span className="bg-gradient-to-r from-white/90 via-accent/90 to-white/90 bg-clip-text text-transparent">
-              {translations.hero.title}
-            </span>
-          </div>
-
-          {/* Enhanced Description */}
-          <p className="text-md md:text-lg lg:text-xl text-white/85 max-w-4xl mx-auto mb-8 md:mb-10 leading-relaxed px-4 font-light tracking-wide">
-            {translations.hero.description}
-          </p>
-
-          {/* Enhanced CTA Buttons */}
+    <section className="py-16 md:py-20 px-4 md:px-6 overflow-x-hidden">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Content */}
           <div
-            className={`flex flex-wrap gap-4 justify-center transition-all duration-1000 delay-300 ${
-              isVisible ? "animate-scale-in" : "opacity-0"
+            className={`transition-all duration-700 ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
             }`}
           >
-            <Button
-              size="lg"
-              className="bg-white/25 hover:bg-white/35 text-white backdrop-blur-lg border border-white/40 hover:border-white/60 transition-all duration-300 hover:shadow-2xl hover:shadow-white/30 hover:scale-105 group"
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              <Mail className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              {translations.hero.contactMe}
-            </Button>
+            {/* Eyebrow */}
+            <div className="flex items-center gap-2 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm font-medium text-foreground/60">
+                Available for work
+              </span>
+              <span className="w-px h-4 bg-border mx-2" />
+              <span className="flex items-center gap-1 text-sm text-foreground/60">
+                <Code2 className="w-4 h-4 text-primary" />
+                Full Stack
+              </span>
+            </div>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-transparent hover:bg-white/15 text-white border-white/40 hover:border-white/60 backdrop-blur-lg transition-all duration-300 hover:shadow-2xl hover:shadow-accent/25 hover:scale-105 group"
-              onClick={handleDownloadCV}
-            >
-              <Download className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              {translations.hero.download}
-            </Button>
+            {/* Heading */}
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-4">
+              {translations.hero.name}{" "}
+              <span className="bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
+                {translations.hero.lastName}
+              </span>
+            </h1>
 
-            {/* WhatsApp Button */}
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-green-600/20 hover:bg-green-600/30 text-white border-green-400/40 hover:border-green-400/60 backdrop-blur-lg transition-all duration-300 hover:shadow-2xl hover:shadow-green-400/25 hover:scale-105 group"
-              onClick={handleWhatsAppClick}
-            >
-              <MessageCircle className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-              {translations.hero.whatsapp}
-            </Button>
+            <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-6">
+              {translations.hero.title}
+            </p>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-transparent hover:bg-white/15 text-white border-white/40 hover:border-white/60 backdrop-blur-lg transition-all duration-300 hover:shadow-2xl hover:shadow-blue-400/25 hover:scale-105 group"
-              asChild
-            >
-              <a
-                href="https://linkedin.com/in/ahmed-hassan-shehata"
-                target="_blank"
-                rel="noopener noreferrer"
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed mb-10">
+              {translations.hero.description}
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap gap-3 mb-10">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary/90 hover:to-primary-glow/90 text-white rounded-lg shadow-lg shadow-primary/20 dark:shadow-primary/30 transition-all duration-300 hover:scale-105"
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
-                <Linkedin className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                {translations.hero.linkedin}
-              </a>
-            </Button>
+                <Mail className="w-4 h-4 mr-2" />
+                {translations.hero.contactMe}
+              </Button>
+
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-border text-foreground hover:bg-accent/5 hover:border-primary/30 rounded-lg font-medium bg-transparent backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                onClick={handleDownloadCV}
+              >
+                <Download className="w-4 h-4 mr-2" />
+                {translations.hero.download}
+              </Button>
+
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-border text-foreground hover:bg-accent/5 hover:border-primary/30 rounded-lg font-medium bg-transparent backdrop-blur-sm transition-all duration-300 hover:scale-105"
+                onClick={handleWhatsAppClick}
+              >
+                <MessageCircle className="w-4 h-4 mr-2" />
+                {translations.hero.whatsapp}
+              </Button>
+            </div>
+
+            {/* Stats */}
+            <div className="flex gap-8 mb-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-2xl font-bold text-foreground">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wider">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Info grid */}
+            <div className="grid grid-cols-2 gap-3 max-w-2xl">
+              <div className="glass-card p-4 hover:border-primary/30 transition-all duration-300">
+                <MapPin className="w-4 h-4 text-primary mb-3" />
+                <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
+                  Location
+                </div>
+                <div className="text-sm text-foreground leading-snug">
+                  {translations.hero.location}
+                </div>
+              </div>
+
+              <div className="glass-card p-4 hover:border-primary/30 transition-all duration-300">
+                <Phone className="w-4 h-4 text-primary mb-3" />
+                <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
+                  Phone
+                </div>
+                <div className="text-sm text-foreground leading-snug">
+                  01554300351
+                </div>
+              </div>
+
+              <div className="glass-card p-4 hover:border-primary/30 transition-all duration-300">
+                <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-3">
+                  Connect
+                </div>
+                <div className="flex items-center gap-3">
+                  {socialLinks.map(({ icon: Icon, label, href }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110"
+                    >
+                      <Icon className="w-4 h-4" />
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div className="glass-card p-4 hover:border-primary/30 transition-all duration-300">
+                <span className="block w-2 h-2 rounded-full bg-primary mb-3 mt-1 animate-pulse" />
+                <div className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
+                  Status
+                </div>
+                <div className="text-sm text-foreground leading-snug">
+                  Open to opportunities
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* Enhanced Social Links */}
-          <div className="flex justify-center gap-8 mt-12">
-            <a
-              href="https://github.com/ashmawymidxd"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/80 hover:text-white transition-all duration-300 hover:scale-125 transform bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="https://t.me/G1_ahmed_hassan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/80 hover:text-white transition-all duration-300 hover:scale-125 transform bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm"
-            >
-              <MessageCircle size={24} />
-            </a>
-            {/* WhatsApp Social Link */}
-            <button
-              onClick={handleWhatsAppClick}
-              className="text-white/80 hover:text-white transition-all duration-300 hover:scale-125 transform bg-green-600/20 hover:bg-green-600/30 p-3 rounded-full backdrop-blur-sm border border-green-400/30"
-            >
-              <MessageCircle size={24} />
-            </button>
+          {/* Right Column - Profile Image */}
+          <div
+            className={`relative flex justify-center items-center transition-all duration-700 delay-200 ${
+              isVisible
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-8"
+            }`}
+          >
+            <div className="relative">
+              {/* Glowing background ring */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-primary-glow opacity-20 blur-2xl animate-pulse" />
+              
+              {/* Main image container */}
+              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                {/* Decorative ring */}
+                <div className="absolute inset-[-8px] rounded-full border-2 border-primary/20 animate-spin-slow" />
+                <div className="absolute inset-[-16px] rounded-full border border-primary/10" />
+                
+                {/* Image */}
+                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/10 shadow-2xl shadow-primary/20 dark:shadow-primary/30">
+                  <img
+                    src={profileImage}
+                    alt={translations.hero.name}
+                    className="w-full h-full object-cover"
+                  />
+                  
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                </div>
+              </div>
+
+              {/* Floating badges */}
+              <div className="absolute -bottom-2 -right-2 glass-card p-3 shadow-xl">
+                <Award className="w-5 h-5 text-primary" />
+              </div>
+              <div className="absolute -top-2 -left-2 glass-card p-3 shadow-xl">
+                <Briefcase className="w-5 h-5 text-primary-glow" />
+              </div>
+
+              {/* Tech stack floating tags */}
+              <div className="absolute -top-8 left-1/2 -translate-x-1/2 glass-card px-4 py-1.5 shadow-lg backdrop-blur-sm">
+                <span className="text-xs font-medium text-foreground">
+                  React • Node • TypeScript
+                </span>
+              </div>
+              <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 glass-card px-4 py-1.5 shadow-lg backdrop-blur-sm">
+                <span className="text-xs font-medium text-foreground">
+                  Full Stack Developer
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-8 h-12 border-2 border-white/40 rounded-full flex justify-center backdrop-blur-sm bg-white/10">
-          <div className="w-1 h-4 bg-accent rounded-full mt-3 animate-pulse shadow-lg shadow-accent/50"></div>
-        </div>
-      </div>
+      {/* Add to your global CSS or tailwind config */}
+      <style jsx>{`
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+      `}</style>
     </section>
   );
 };
