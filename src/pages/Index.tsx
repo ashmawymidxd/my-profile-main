@@ -27,7 +27,7 @@ const IndexContent = () => {
     <div className={`min-h-screen bg-background overflow-x-hidden ${isRTL ? 'font-arabic' : ''}`}>
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-        <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 md:py-4">
+        <div className="max-w-6xl mx-auto px-4 md:px-0 py-3 md:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="text-xl font-bold text-primary">
