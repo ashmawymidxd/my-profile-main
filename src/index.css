@@ -70,22 +70,23 @@ body {
     --shadow-hover: 0 3px 5px rgba(31, 38, 135, 0.5);
     --glow-primary: 0 0 30px hsl(var(--primary) / 0.3);
 
+    /* Scrollbar Colors */
+    --scrollbar-track: hsl(var(--muted) / 0.5);
+    --scrollbar-thumb: hsl(var(--primary) / 0.3);
+    --scrollbar-thumb-hover: hsl(var(--primary) / 0.5);
+    --scrollbar-thumb-active: hsl(var(--primary) / 0.7);
+    --scrollbar-size: 8px;
+    --scrollbar-border-radius: 100px;
+
     --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -145,6 +146,12 @@ body {
     --shadow-hover: 0 3px 5px rgba(0, 0, 0, 0.7);
     --glow-primary: 0 0 30px hsl(var(--primary) / 0.4);
 
+    /* Dark Scrollbar Colors */
+    --scrollbar-track: hsl(var(--muted) / 0.3);
+    --scrollbar-thumb: hsl(var(--primary) / 0.25);
+    --scrollbar-thumb-hover: hsl(var(--primary) / 0.45);
+    --scrollbar-thumb-active: hsl(var(--primary) / 0.65);
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -163,6 +170,8 @@ body {
 
   html {
     overflow-x: hidden;
+    /* Smooth scrolling for the whole page */
+    scroll-behavior: smooth;
   }
 
   body {
@@ -174,6 +183,239 @@ body {
   .font-arabic {
     font-family: "Cairo", sans-serif;
   }
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR STYLES
+   ============================================ */
+
+/* Webkit Browsers (Chrome, Safari, Edge, Opera) */
+::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: var(--scrollbar-border-radius);
+  /* Add subtle inner shadow for depth */
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--scrollbar-border-radius);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  /* Subtle glow effect on hover */
+  box-shadow: 0 0 8px hsl(var(--primary) / 0.2);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--scrollbar-thumb-active);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  box-shadow: 0 0 12px hsl(var(--primary) / 0.3);
+}
+
+/* Scrollbar corner (where horizontal and vertical meet) */
+::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track);
+  border-radius: var(--scrollbar-border-radius);
+}
+
+/* Hide scrollbar but keep functionality (optional utility class) */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Thin scrollbar variant */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* No scrollbar variant */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Firefox Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+/* Firefox hover state (limited support, but included) */
+@supports (scrollbar-color: hover) {
+  *:hover {
+    scrollbar-color: var(--scrollbar-thumb-hover) var(--scrollbar-track);
+  }
+}
+
+/* ============================================
+   SCROLLBAR WITH GRADIENT THUMB
+   ============================================ */
+.scrollbar-gradient::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-glow))
+  );
+  border-radius: var(--scrollbar-border-radius);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+.scrollbar-gradient::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--primary) / 0.9),
+    hsl(var(--primary-glow) / 0.9)
+  );
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+/* ============================================
+   SCROLLBAR WITH GLOW EFFECT
+   ============================================ */
+.scrollbar-glow::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-glow::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: var(--scrollbar-border-radius);
+  box-shadow: 
+    0 0 6px hsl(var(--primary) / 0.3),
+    0 0 12px hsl(var(--primary) / 0.1);
+  transition: all 0.3s ease;
+}
+
+.scrollbar-glow::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+  box-shadow: 
+    0 0 10px hsl(var(--primary) / 0.5),
+    0 0 20px hsl(var(--primary) / 0.2);
+}
+
+/* ============================================
+   MINIMAL SCROLLBAR (Ultra Clean)
+   ============================================ */
+.scrollbar-minimal::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.scrollbar-minimal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-minimal::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.2);
+  border-radius: var(--scrollbar-border-radius);
+  transition: background 0.3s ease;
+}
+
+.scrollbar-minimal::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.4);
+}
+
+/* ============================================
+   FANCY SCROLLBAR (With Border Effect)
+   ============================================ */
+.scrollbar-fancy::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.scrollbar-fancy::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: var(--scrollbar-border-radius);
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+.scrollbar-fancy::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-glow))
+  );
+  border-radius: var(--scrollbar-border-radius);
+  border: 2px solid hsl(var(--background));
+  transition: all 0.3s ease;
+}
+
+.scrollbar-fancy::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    hsl(var(--primary) / 0.9),
+    hsl(var(--primary-glow) / 0.9)
+  );
+  box-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+}
+
+/* ============================================
+   DARK MODE SPECIFIC SCROLLBAR ENHANCEMENTS
+   ============================================ */
+.dark ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 0 12px hsl(var(--primary) / 0.4);
+}
+
+.dark ::-webkit-scrollbar-thumb:active {
+  box-shadow: 0 0 16px hsl(var(--primary) / 0.5);
+}
+
+/* ============================================
+   SCROLL PROGRESS INDICATOR (Top of page)
+   ============================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.scroll-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--scroll-progress, 0%);
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-glow)),
+    hsl(var(--accent))
+  );
+  border-radius: 0 2px 2px 0;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px hsl(var(--primary) / 0.5);
 }
 
 @layer components {
