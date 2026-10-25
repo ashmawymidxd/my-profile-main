@@ -19,7 +19,8 @@ import {
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/contexts/I18nContext";
 import cvFile from "@/assets/cv/Ahmed_Hassan_Full_Stack_CV.pdf";
-import profileImage from "@/assets/profile/profile.jpg";
+import darkProfileImage from "@/assets/profile/profile.png";
+import lightProfileImage from "@/assets/profile/profile.jpg";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -321,10 +322,17 @@ const Hero = () => {
 
                 {/* Image with mask */}
                 <div className="absolute inset-[3px] rounded-full overflow-hidden shadow-2xl shadow-primary/20">
+                  {/* Dark mode image */}
                   <img
-                    src={profileImage}
+                    src={darkProfileImage}
                     alt={translations.hero.name}
-                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    className="hidden dark:block w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  {/* Light mode image */}
+                  <img
+                    src={lightProfileImage}
+                    alt={translations.hero.name}
+                    className="block dark:hidden w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
 
                   {/* Gradient overlay */}
